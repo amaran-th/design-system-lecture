@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Menu } from "./Menu";
-import { MenuItem } from "./MenuItem/MenuItem";
+import { Menu } from "../../../components/Menu";
+import { MenuItem } from "../../../components/MenuItem";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {

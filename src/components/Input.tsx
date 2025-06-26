@@ -1,6 +1,7 @@
 import classNames from "classnames";
 
-export interface InputProps {
+export interface InputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   disabled?: boolean;
   readOnly?: boolean;
   placeholder?: string;

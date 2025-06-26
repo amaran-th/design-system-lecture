@@ -1,29 +1,34 @@
 import classNames from "classnames";
 import type { ReactNode } from "react";
-import { Asterisk } from "../../../atoms/Asterisk/Asterisk";
-import { LabelText } from "../../../atoms/LabelText/LabelText";
+import { Asterisk } from "./Asterisk";
+import { LabelText } from "./LabelText";
 
 export interface InputLabelProps {
-  label: string;
+  text: string;
   slot?: {
     left?: ReactNode;
     right?: ReactNode;
   };
   required?: boolean;
+  NestedLabelText?: typeof LabelText;
 }
 
 /** Primary UI component for user interaction */
 export const InputLabel = ({
-  label,
+  text,
   slot,
   required,
-  ...props
+  NestedLabelText,
 }: InputLabelProps) => {
   return (
-    <div className={classNames("flex gap-1 justify-between items-center")}>
+    <div className={classNames("flex gap-1 justify-start items-center")}>
       {slot?.left}
       <div className="flex">
-        <LabelText label={label} {...props} />
+        {NestedLabelText ? (
+          <NestedLabelText text={text} />
+        ) : (
+          <LabelText text={text} />
+        )}
         {required && <Asterisk />}
       </div>
       {slot?.right}

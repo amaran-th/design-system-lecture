@@ -1,10 +1,14 @@
+import classNames from "classnames";
+import type { Size } from "../stories/type";
+import "./button.css";
+
 export interface ButtonProps {
   /** Is this the principal call to action on the page? */
   primary?: boolean;
   /** What background color to use */
   backgroundColor?: string;
   /** How large should the button be? */
-  size?: "small" | "medium" | "large";
+  size?: Size;
   /** Button contents */
   label: string;
   /** Optional click handler */
@@ -12,9 +16,9 @@ export interface ButtonProps {
 }
 
 /** Primary UI component for user interaction */
-export const TokenizedTextField = ({
+export const Button = ({
   primary = false,
-  size = "medium",
+  size = "md",
   backgroundColor,
   label,
   ...props
@@ -25,9 +29,7 @@ export const TokenizedTextField = ({
   return (
     <button
       type="button"
-      className={["storybook-button", `storybook-button--${size}`, mode].join(
-        " "
-      )}
+      className={classNames(`text-${size}`, mode)}
       style={{ backgroundColor }}
       {...props}
     >

@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Chip } from "../../Chip/Chip";
-import { WrapperInput } from "./WrapperInput";
+import { Chip } from "../../../../components/Chip";
+import { Input } from "../../../../components/Input";
+import { WrapperInput } from "../../../../components/WrapperInput";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -20,27 +21,23 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Default: Story = {
   args: {
-    nestedInputProps: { value: "test" },
+    swap: { input: <Input value="test" /> },
   },
 };
 
 export const ChipInput: Story = {
-  args: { nestedInputProps: { value: "test" }, Wrapper: Chip },
+  args: { swap: { input: <Input value="test" /> }, Wrapper: Chip },
 };
 
 export const Readonly: Story = {
   args: {
-    nestedInputProps: {
-      value: "test",
-      readOnly: true,
-    },
+    swap: { input: <Input value="test" /> },
+    readOnly: true,
   },
 };
 
 export const Disabled: Story = {
   args: {
-    nestedInputProps: {
-      disabled: true,
-    },
+    disabled: true,
   },
 };
