@@ -1,12 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
-import { Icon } from "../../../../components/Icon";
-import { IconButton } from "../../../../components/IconButton";
-import { MenuItem } from "../../../../components/MenuItem";
+import { Icon } from "../../../components/Icon";
+import { IconButton } from "../../../components/IconButton";
+import { MenuItem } from "../../../components/MenuItem";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: "molecules/Menu/MenuItem",
+  title: "molecules/MenuItem",
   component: MenuItem,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout

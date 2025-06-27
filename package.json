@@ -16,7 +16,7 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "chromatic --exit-zero-on-changes"
+    "chromatic": "npx chromatic --project-token=chpt_b366807e8fe207d"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.5",
