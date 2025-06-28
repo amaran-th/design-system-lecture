@@ -3,22 +3,27 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Menu } from "../../../components/Menu";
 import { MenuItem } from "../../../components/MenuItem";
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: "molecules/Menu",
+  title: "organism/Menu",
   component: Menu,
   parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: "centered",
   },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
+  argTypes: {
+    children: { description: "Menu Type 내용" },
+    width: { control: "number", description: "Menu Item의 고정 너비" },
+    density: {
+      control: "select",
+      options: ["dense", "compact", "spacious"],
+      description: "Menu Item 내부 여백의 빽빽한 정도",
+    },
+  },
   tags: ["autodocs"],
 } satisfies Meta<typeof Menu>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Defualt: Story = {
   args: {
     children: (
